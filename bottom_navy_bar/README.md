@@ -1,3 +1,5 @@
+![designing bottom bar](https://user-images.githubusercontent.com/49479943/207299496-9b8b766b-1296-460a-9c27-f65de16db5c8.png)
+Demo Video link -- [Designing bottom bar.webm](https://user-images.githubusercontent.com/49479943/207299503-f4e696ee-9da8-408e-9e43-aa3351797766.webm)
 # _navy_bar
 
 A new Flutter project.
