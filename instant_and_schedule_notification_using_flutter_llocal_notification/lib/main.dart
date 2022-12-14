@@ -70,7 +70,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(onPressed: (){
               notificationServices.Schedule_sendnotification("Schedule Notification", "Body of Schedule Notification");
             },
-                child: Text("Schedule Notification"))
+                child: Text("Schedule Notification")),
+            ElevatedButton(onPressed: (){
+              notificationServices.StopNotification();
+            },
+                child: Text("Stop Notification"))
           ],
         ),
       )

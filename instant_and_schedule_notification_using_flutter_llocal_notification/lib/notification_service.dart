@@ -56,4 +56,10 @@ AndroidInitializationSettings _androidInitializationSettings = AndroidInitializa
         notificationDetails
     );
 
-} }
+}
+
+   void StopNotification(){
+   flutterLocalNotificationsPlugin.cancelAll();
+   }
+}
+
