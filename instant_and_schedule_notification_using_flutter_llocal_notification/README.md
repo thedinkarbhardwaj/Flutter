@@ -1,3 +1,10 @@
+
+![instant](https://user-images.githubusercontent.com/49479943/207520009-3f45a0b6-a152-4b2f-a571-76519bdea0ae.png)
+![schedule Notfication](https://user-images.githubusercontent.com/49479943/207520010-a5fa4747-d790-4f52-98eb-a7d9648ae9aa.png)
+
+Demo video link -- [instant and schedule notification.webm](https://user-images.githubusercontent.com/49479943/207519995-e11fcb37-085d-4577-9bee-0f71b2708fc4.webm)
+
+
 # instant_and_schedule_notification_using_flutter_local_notification
 
 A new Flutter project.
