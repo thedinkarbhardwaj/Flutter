@@ -1,3 +1,9 @@
+
+![pick image](https://user-images.githubusercontent.com/49479943/207861081-d105d886-1113-4664-9cb9-6900f4ec79c3.png)
+
+Demo video link --[pick image video.webm](https://user-images.githubusercontent.com/49479943/207861073-71236c52-588e-4a7c-9c95-2b7c98b973ca.webm)
+
+
 # file_pick_and_view
 
 A new Flutter project.
