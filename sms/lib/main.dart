@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
+import 'package:motion_toast/motion_toast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -76,7 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
         .catchError((onError) {
       print(onError);
     });
-    print(_result);
+    MotionToast.success(
+      title:  Text(_result), description: Text(""),).show(context);
 
     mobilecontroller.text = '';
     msgcontroller.text = '';
