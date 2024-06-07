@@ -1,0 +1,1 @@
+const splashScreenImg = "assets/splash_screen.jpg";
