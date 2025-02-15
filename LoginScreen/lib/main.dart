@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'CommonDesign/CommonDesign.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(const LoginScreen());
@@ -29,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset('assests/images/welcome.png', width: 200, height: 300),
-                    
+
                     titleTxt("Discover Your \n Dream Job here", true),
                     SizedBox(height: 20),
                     descTxt("Explore all the existing job roles based on your interest and study major"),
@@ -45,9 +46,14 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(child: commonBtn("Login")),
+                  Expanded(child: commonBtn("Login", onPressedd: () {
+                    Fluttertoast.showToast(msg: "Login act");
+                  })),
                   SizedBox(width: 20),
-                  Expanded(child: commonBtn("Signup")),
+                  Expanded(child: commonBtn("Signup", onPressedd: () {
+                    Fluttertoast.showToast(msg: "Signup act");
+
+                  })),
                 ],
               ),
             ),

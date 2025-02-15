@@ -15,9 +15,9 @@ import '../Utils/colors.dart';
    return Text(desc,style: TextStyle(fontSize: 14, color: Colors.black,height: 1.2), textAlign: TextAlign.center,);
  }
 
-ElevatedButton commonBtn(String title) {
+ElevatedButton commonBtn(String title,{VoidCallback? onPressedd}) {
   return ElevatedButton(
-    onPressed: () {},
+    onPressed: onPressedd,
     style: ElevatedButton.styleFrom(
       backgroundColor: Color(int.parse("0xFF1F41BB")), // Set custom hex color
       shape: RoundedRectangleBorder(

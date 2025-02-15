@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_screen/CommonDesign/CommonDesign.dart';
 import 'package:login_screen/Utils/colors.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main(){
   runApp(LoginApp());
@@ -40,7 +41,10 @@ class _LoginAppState extends State<LoginApp> {
               SizedBox(height: 20),
               SizedBox(
                   width: double.infinity,
-                  child: commonBtn("Sign in")),
+                  child: commonBtn("Sign in", onPressedd: () {
+                    print("Click on signin");
+                    Fluttertoast.showToast(msg: "Click on signin");
+                  })),
               SizedBox(height: 30),
               descTxt("Create new account"),
               SizedBox(height: 30),
