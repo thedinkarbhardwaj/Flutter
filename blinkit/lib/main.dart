@@ -1,3 +1,4 @@
+import 'package:blinkit/repository/screens/cart/CartScreen.dart';
 import 'package:blinkit/repository/screens/splash/splashscreen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: Splashscreen(),
+      home: Cartscreen(),
     );
   }
 }

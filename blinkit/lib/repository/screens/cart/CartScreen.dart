@@ -1,6 +1,8 @@
-import 'package:blinkit/domain/constants/appcolors.dart';
-import 'package:blinkit/repository/widgets/uihelper.dart';
 import 'package:flutter/material.dart';
+
+void main() {
+  runApp(Cartscreen());
+}
 
 class Cartscreen extends StatelessWidget {
   const Cartscreen({super.key});
@@ -9,41 +11,41 @@ class Cartscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var searchController = TextEditingController();
 
+    var imglist = ["milk.png", "potato.png", "tomato.png"];
+
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
             Container(
               height: 160,
-              color: AppColor.yellow,
+              color: Colors.yellow,
               child: Column(
                 children: [
                   Row(
                     children: [
                       SizedBox(width: 10),
-                      UiHelper.CustomText(
-                          text: "Blinkit in",
-                          color: AppColor.black,
-                          fontweight: FontWeight.bold,
-                          fontsize: 14
-                      ),
+                      Text("Blinkit in",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14)),
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start, // Align the text at the start
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(width: 10),
-                      UiHelper.CustomText(
-                        text: "16 minutes",
-                        color: AppColor.black,
-                        fontweight: FontWeight.bold,
-                        fontsize: 20,
-                      ),
-                      Spacer(), // Add space between text and CircleAvatar
+                      Text("16 minutes",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20)),
+                      Spacer(),
                       CircleAvatar(
                         radius: 15,
-                        backgroundColor: Colors.grey, // Customize color
-                        child: Icon(Icons.person, color: Colors.white), // Person icon
+                        backgroundColor: Colors.grey,
+                        child: Icon(Icons.person, color: Colors.white),
                       ),
                       SizedBox(width: 8)
                     ],
@@ -52,18 +54,16 @@ class Cartscreen extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(width: 10),
-                      UiHelper.CustomText(
-                          text: "Home - ",
-                          color: AppColor.black,
-                          fontweight: FontWeight.bold,
-                          fontsize: 14
-                      ),
-                      UiHelper.CustomText(
-                          text: "Sujal Dave, Ratanada, Jodhpur (Raj)",
-                          color: AppColor.black,
-                          fontweight: FontWeight.w500,
-                          fontsize: 14
-                      ),
+                      Text("Home - ",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14)),
+                      Text("Sujal Dave, Ratanada, Jodhpur (Raj)",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14)),
                       SizedBox(width: 4),
                       Icon(Icons.keyboard_arrow_down_sharp, size: 20)
                     ],
@@ -77,29 +77,101 @@ class Cartscreen extends StatelessWidget {
                         suffixIcon: Icon(Icons.mic),
                         hintText: "Search “ice-cream”",
                         enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: AppColor.black,
-                                width: 2
-                            ),
-                            borderRadius: BorderRadius.circular(10)
-                        ),
+                            borderSide:
+                            BorderSide(color: Colors.black, width: 2),
+                            borderRadius: BorderRadius.circular(10)),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(
-                                color: AppColor.red,
-                                width: 2
-                            )
-                        ),
+                            borderSide:
+                            BorderSide(color: Colors.red, width: 2)),
                       ),
                     ),
                   ),
-                  // Button to print the controller's value
-
                 ],
               ),
             ),
             SizedBox(height: 10),
-            Text("data")
+            Image.asset("assets/images/reording.png"),
+            SizedBox(height: 20),
+            Text("Reordering will be easy",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "bold")),
+            Text(
+                "Items you order will show up here so you can buy \nthem again easily.",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: "regular",
+                ),
+                textAlign: TextAlign.center),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                SizedBox(width: 10),
+                Text("Bestsellers",
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontFamily: "bold",
+                        fontWeight: FontWeight.bold)),
+              ],
+            ),
+            SizedBox(height: 10),
+            // Remove Expanded and use a fixed size for ListView
+            Container(
+              height: 250, // Fixed height for the ListView container
+              child: ListView.builder(
+                itemCount: imglist.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 150, // Fixed width for the item
+                    margin: EdgeInsets.all(8), // Margin between items
+                    child: Stack(
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          height: 200, // Fixed height for the image container
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/" +
+                                  imglist[index]), // Image path
+                              fit: BoxFit.cover, // Ensure image fills the container
+                            ),
+                          ),
+                        ),
+                        // Add Positioned widget to place the "ADD" button over the image
+                        Positioned(
+                          bottom: 10, // Position the button at the bottom
+                          left: 0,
+                          right: 0,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                side: BorderSide(color: Colors.green),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 8),
+                            ),
+                            onPressed: () {},
+                            child: Text(
+                              "ADD",
+                              style: TextStyle(color: Colors.green),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
